@@ -247,6 +247,14 @@ var categories = new Vue({
       {
         id: 2,
         content: 'action'
+      },
+      {
+        id: 3,
+        content: 'science fiction'
+      },
+      {
+        id: 4,
+        content: 'comedy'
       }
     ]
   },
@@ -258,6 +266,48 @@ var categories = new Vue({
     select(event, item) {
       event.preventDefault()
       this.selected = item.id
+      
+      this.toggleAlert()
+      
     },
+
+    toggleAlert() {
+      // open alert
+      document.getElementById('alert-success').className = 
+        document.getElementById('alert-success').className.replace('hidden', '')
+
+      // close it afte 2s
+      setTimeout(() => {
+        document.getElementById('alert-success').className += ' hidden'
+      }, 2000);
+    }
+  }
+})
+
+var boxOffice = new Vue({
+  el: '#boxOffice',
+  data: {
+    list: [
+      {
+        image: './dist/images/train.jpg',
+        title: 'The best one - season 5',
+        rating: 8.6,
+      },
+      {
+        image: './dist/images/alone.jpg',
+        title: 'Breaking Somthing',
+        rating: 8.5,
+      },
+      {
+        image: './dist/images/mickey moose.jpg',
+        title: 'Alone (2019)',
+        rating: 9.1,
+      },
+      {
+        image: './dist/images/algeria.jpg',
+        title: 'The beautiful',
+        rating: 9.2,
+      }
+    ]
   }
 })
