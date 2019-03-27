@@ -69,6 +69,48 @@ var intro = new Vue({
   }
 })
 
+var intro1 = new Vue({
+  el: '#intro1',
+  data: {
+    carousel2: [
+      {
+        image: './dist/images/algeria.jpg',
+        title: 'Algeria: the new world',
+        created_at: '27 Mars 2019',
+        paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum est lobortis, auctor leo eget volutpat....'
+      },
+
+      {
+        image: './dist/images/alone.jpg',
+        title: 'alone (2019)',
+        created_at: '05 Mars 2019',
+        paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum est lobortis, auctor leo eget volutpat....'
+      },
+
+      {
+        image: './dist/images/love and sunset.jpg',
+        title: 'love and sunset',
+        created_at: '27 Mars 2019',
+        paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum est lobortis, auctor leo eget volutpat....'
+      },
+
+      {
+        image: './dist/images/train.jpg',
+        title: 'train in the winter of russia',
+        created_at: '08 Avril 2019',
+        paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum est lobortis, auctor leo eget volutpat....'
+      },
+
+      {
+        image: './dist/images/with police.jpg',
+        title: 'one day with police',
+        created_at: '27 Mars 2019',
+        paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum est lobortis, auctor leo eget volutpat....'
+      },
+    ]
+  }
+})
+
 var groupBy = new Vue({
   el: '#groupBy',
   data: {
@@ -311,3 +353,42 @@ var boxOffice = new Vue({
     ]
   }
 })
+
+var onCinema = new Vue({
+  el: '#onCinema',
+  data: {
+    list: [
+      {
+        image: './dist/images/train.jpg',
+        title: 'The best one - season 5',
+        created_at: '27 Mars 2019',
+        rating: 8.6,
+      },
+      {
+        image: './dist/images/alone.jpg',
+        title: 'Breaking Somthing',
+        created_at: '15 Mars 2019',
+        rating: 8.5,
+      },
+      {
+        image: './dist/images/mickey moose.jpg',
+        title: 'Alone (2019)',
+        created_at: '27 january 2019',
+        rating: 9.1,
+      },
+      {
+        image: './dist/images/algeria.jpg',
+        title: 'The beautiful',
+        created_at: '03 juin 2019',
+        rating: 9.2,
+      }
+    ]
+  }
+})
+
+function openModal(event, item) {
+
+  document.getElementById('Modal').className = 
+    document.getElementById('Modal').className.replace('hidden', '')
+
+}
