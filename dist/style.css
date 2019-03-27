@@ -12,3 +12,11 @@ a {
 #content-container {
   height: 195px;
 }
+
+.black-page {
+  background: rgb(8, 8, 8);
+}
+
+.black-page iframe {
+  height: 400px;
+}
