@@ -81,18 +81,18 @@
 
   <!-- Register Form -->
   <div class="border-0 px-3">
-    <div class="w-full flex bg-white shadow-lg rounded lg:w-2/3 pl-0 pr-0  mx-auto my-12 flex flex-wrap border-none my-5">
-      <div class="w-2/3  rounded-l" style="background: url(./dist/images/pattern.png) repeat;">
-        <div class="w-full h-full rounded-l  p-5 lg:p-10 text-white leading-loose" style="background: linear-gradient(rgba(5, 14, 10, 0.95) 41%, rgb(10, 53, 28));">
+    <div class="w-full flex flex-wrap lg:flex-no-wrap bg-white shadow-lg rounded lg:w-2/3 pl-0 pr-0  mx-auto my-12 flex flex-wrap border-none my-5">
+      <div class="w-full lg:w-2/3  rounded-t lg:rounded-l" style="background: url(./dist/images/pattern.png) repeat;">
+        <div class="w-full h-full rounded-t lg:rounded-l  p-5 lg:p-10 text-white leading-loose" style="background: linear-gradient(rgba(5, 14, 10, 0.95) 41%, rgb(10, 53, 28));">
           <h1 class="font-bold text-6xl mb-5 text-grey-lightest">Welcome to us !</h1>
           <p class="w-full mx-auto mb-16 text-grey-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida rhoncus efficitur. Nullam semper cursus urna
             auctor cursus. Vivamus porttitor convallis mi</p>
         </div>
       </div>
-      <div class="w-1/3 py-2 flex flex-wrap border-none">
+      <div class="w-full lg:w-1/3 py-2 flex flex-wrap border-none">
 
         <!-- Form -->
-        <form>
+        <form class="w-full p-0">
           <h1 class="font-semibold text-xl mt-5 mb-8 w-full mx-5 text-grey-darker">Register</h1>
           <div class="w-full  p-5 pt-0 ">
             <input type="text" class="w-full font-normal px-4 py-3 bg-white border rounded" placeholder="Username">
@@ -125,32 +125,34 @@
 
   <!--Terms Of Use : white div -->
   <div id="terms" class="fixed pin hidden transparent-black">
-    <div class="animated fadeInUp faster relative w-1/3 mx-auto my-16 bg-white shadow-lg p-8 text-left text-black border-0 rounded">
-      <h1 class="font-bold text-xl mb-5 capitalize">Terms of use</h1>
-      <!--container of paragraph-->
-      <div class="w-full py-3 mt-8 h-64 p-2 overflow-y-auto border leading-normal">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida rhoncus efficitur. Nullam semper cursus urna
-          auctor cursus. Vivamus porttitor convallis mi, at sagittis turpis. Fusce hendrerit eleifend sem, quis dapibus nunc
-          euismod eu. Aenean condimentum quis odio vitae dapibus. Nulla facilisi. Sed bibendum pulvinar nisi, sed blandit
-          nisi egestas ut. Suspendisse libero quam, dictum in ex sed, efficitur pellentesque dui. Nunc a nisi finibus, posuere
-          enim nec, accumsan turpis. Duis venenatis sapien at malesuada porta. Donec vitae elit magna. Cras sit amet erat
-          quam. Proin elementum venenatis tellus id sagittis. Suspendisse dignissim sapien a arcu pretium, vitae placerat
-          dui egestas. Sed tellus est, rhoncus sit amet pharetra sed, gravida et est. Curabitur laoreet urna ac libero auctor
-          mollis. Ut mollis, ipsum quis facilisis rutrum, odio eros tempor velit, eget sagittis dui tellus eu neque. Nullam
-          egestas libero non risus bibendum suscipit. Aenean eget molestie magna, id venenatis est. Sed imperdiet eget est
-          sed pretium. Proin mauris libero, volutpat in metus molestie, euismod faucibus metus. Sed ut purus et tortor pulvinar
-          facilisis at id mauris. Curabitur tempus, felis nec pharetra faucibus, mauris velit faucibus magna, a porttitor
-          risus massa sit amet sapien. Praesent egestas vitae est eu vulputate. Nunc a erat velit. Suspendisse potenti. Praesent
-          accumsan vel metus sed feugiat. Maecenas quis diam sit amet lectus pulvinar accumsan. Phasellus eget dolor molestie,
-          aliquam dolor sed, efficitur mi. In non neque convallis, dignissim dolor faucibus, euismod felis. Morbi fermentum
-          gravida dolor, ut laoreet purus convallis placerat. Aliquam sed erat odio. Cras egestas ac dolor eu volutpat. Aenean
-          efficitur bibendum magna, a venenatis ante gravida et. </p>
-      </div>
-      <div class="w-full pt-3 mt-8 text-center">
-        <!--Accept button-->
-        <button onclick="document.getElementById('terms').className += ' hidden'" class="hover:bg-green hover:text-white hover:border-green-dark mx-2 border border-grey-light bg-grey-lightest text-grey-darkest rounded-full px-8 py-2 font-semibold">Accept</button>
-        <!--Decline button-->
-        <button class="hover:bg-red-light hover:text-white hover:border-red-dark mx-2 border border-grey-light bg-grey-lightest text-grey-darkest rounded-full px-8 py-2 font-semibold">Decline</button>
+    <div class="animated fadeInUp faster w-full my-16 lg:w-1/3 mx-auto px-3 lg:px-0">
+      <div class="w-full bg-white shadow-lg p-8 text-left text-black border-0 rounded">
+        <h1 class="font-bold text-xl mb-5 capitalize">Terms of use</h1>
+        <!--container of paragraph-->
+        <div class="w-full py-3 mt-8 h-64 p-2 overflow-y-auto border leading-normal">
+          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida rhoncus efficitur. Nullam semper cursus urna
+            auctor cursus. Vivamus porttitor convallis mi, at sagittis turpis. Fusce hendrerit eleifend sem, quis dapibus
+            nunc euismod eu. Aenean condimentum quis odio vitae dapibus. Nulla facilisi. Sed bibendum pulvinar nisi, sed
+            blandit nisi egestas ut. Suspendisse libero quam, dictum in ex sed, efficitur pellentesque dui. Nunc a nisi finibus,
+            posuere enim nec, accumsan turpis. Duis venenatis sapien at malesuada porta. Donec vitae elit magna. Cras sit
+            amet erat quam. Proin elementum venenatis tellus id sagittis. Suspendisse dignissim sapien a arcu pretium, vitae
+            placerat dui egestas. Sed tellus est, rhoncus sit amet pharetra sed, gravida et est. Curabitur laoreet urna ac
+            libero auctor mollis. Ut mollis, ipsum quis facilisis rutrum, odio eros tempor velit, eget sagittis dui tellus
+            eu neque. Nullam egestas libero non risus bibendum suscipit. Aenean eget molestie magna, id venenatis est. Sed
+            imperdiet eget est sed pretium. Proin mauris libero, volutpat in metus molestie, euismod faucibus metus. Sed
+            ut purus et tortor pulvinar facilisis at id mauris. Curabitur tempus, felis nec pharetra faucibus, mauris velit
+            faucibus magna, a porttitor risus massa sit amet sapien. Praesent egestas vitae est eu vulputate. Nunc a erat
+            velit. Suspendisse potenti. Praesent accumsan vel metus sed feugiat. Maecenas quis diam sit amet lectus pulvinar
+            accumsan. Phasellus eget dolor molestie, aliquam dolor sed, efficitur mi. In non neque convallis, dignissim dolor
+            faucibus, euismod felis. Morbi fermentum gravida dolor, ut laoreet purus convallis placerat. Aliquam sed erat
+            odio. Cras egestas ac dolor eu volutpat. Aenean efficitur bibendum magna, a venenatis ante gravida et. </p>
+        </div>
+        <div class="w-full pt-3 mt-8 text-center">
+          <!--Accept button-->
+          <button onclick="document.getElementById('terms').className += ' hidden'" class="hover:bg-green hover:text-white hover:border-green-dark mx-2 border border-grey-light bg-grey-lightest text-grey-darkest rounded-full px-8 py-2 font-semibold">Accept</button>
+          <!--Decline button-->
+          <button class="hover:bg-red-light hover:text-white hover:border-red-dark mx-2 border border-grey-light bg-grey-lightest text-grey-darkest rounded-full px-8 py-2 font-semibold">Decline</button>
+        </div>
       </div>
     </div>
   </div>
