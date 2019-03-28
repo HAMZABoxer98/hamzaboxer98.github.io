@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link href="./dist/tailwind.css" rel="stylesheet"> -->
+  <link href="./dist/style.css" rel="stylesheet">
+  <link href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="./node_modules/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+  <link href="./node_modules/animate.css/animate.min.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  <script src="https://unpkg.com/@glidejs/glide@3.0.4/dist/glide.js"></script>
+  <link href="https://unpkg.com/@glidejs/glide@3.0.4/dist/css/glide.theme.css" rel="stylesheet">
+  <link href="https://unpkg.com/@glidejs/glide@3.0.4/dist/css/glide.core.css" rel="stylesheet">
+  <title>myCinema | Welcome to you</title>
+</head>
+
+<body class="bg-indigo-lightest p-0 text-sm relative">
+
+  <!-- Alert -->
+  <div id="alert-success" class="animated fadeInUp faster hidden fixed pin-t pin-r m-8 bg-black z-40 text-green-light font-semibold px-5 py-3 rounded shadow-lg">
+    <i class="fas fa-check-circle"></i>
+    <span class="ml-2">Selected Successfully !</span>
+  </div>
+
+  <!-- White Navigation -->
+  <div class="w-full bg-white px-2 py-0 border-0 shadow-lg">
+    <!-- Desktop Navigation -->
+    <div class="w-full px-2 bg-white border-0 relative p-0 hidden lg:flex">
+      <a href="./index.html" class="block px-2 border-b-2 border-transparent hover:bg-grey-lightest">
+        <img src="./dist/images/logo.png" class="w-10 h-10 mt-3">
+      </a>
+      <div class="px-2 pt-px flex items-start absolute pin-r pin-y mr-2">
+        <a href="./Login.html" class="block bg-green rounded-full px-8 py-2 text-white mt-3">Login</a>
+      </div>
+      <a href="./Pricing.html" class="block px-2 py-5 border-b-2 border-transparent hover:border-grey-darker hover:bg-grey-lightest">
+        <span>Pricing</span>
+      </a>
+      <div class="px-2 border-b-2 border-transparent">
+        <div class="px-2 mt-3 mr-2 relative">
+          <input type="search" class="w-64 font-normal px-5 pr-5 py-2 bg-white border rounded-full" placeholder="search">
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="w-full px-2 bg-white border-0 flex relative p-0 text-grey-darker lg:hidden">
+      <a href="./index.html" class="block px-2 border-b-2 border-transparent hover:bg-grey-lightest">
+        <img src="./dist/images/logo.png" class="w-10 h-10 mt-3">
+      </a>
+      <div onclick="document.getElementById('navigation-dropdown').className = document.getElementById('navigation-dropdown').className.replace('hidden','')"
+        class="cursor-pointer px-2 py-5 flex items-start absolute pin-r pin-y mr-2">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <!-- Mobile Navigation DropDown -->
+    <div id="navigation-dropdown" class="animated slideInDown faster hidden w-full p-2 bg-white relative p-0 text-grey-darker border-t lg:hidden">
+      <div class="p-2 text-center">
+        <div class="px-2 mr-2 relative">
+          <input type="text" class="w-full font-thin pl-10 pr-5 py-2 bg-indigo-lightest rounded-full" placeholder="search">
+        </div>
+      </div>
+      <a href="./Pricing.html" class="block p-2 text-center border-b">
+        <span>Pricing</span>
+      </a>
+      <div class="p-2 text-center">
+        <a href="./Login.html" class="block bg-green rounded-full px-8 py-2 text-white font-thin w-full">Login</a>
+      </div>
+    </div>
+  </div>
+  <!-- End of Header -->
+
+
+
+
+  <!-- Login Form -->
+  <div class="border-0 px-3">
+    <div class="w-full flex flex-wrap lg:flex-no-wrap bg-white shadow-lg rounded lg:w-2/3 pl-0 pr-0  mx-auto my-12 flex flex-wrap border-none my-5">
+      <!--" Welcome to us! " container-->
+      <div class="w-full lg:w-2/3 rounded-t lg:rounded-l" style="background: url(./dist/images/pattern.png) repeat;">
+        <div class="w-full h-full rounded-t lg:rounded-l p-5 lg:p-10 text-white leading-loose" style="background: linear-gradient(rgba(5, 14, 10, 0.95) 41%, rgb(10, 53, 28));">
+          <h1 class="font-bold text-6xl mb-5 text-grey-lightest">Welcome to us !</h1>
+          <p class="w-full mx-auto mb-16 text-grey-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida rhoncus efficitur. Nullam semper cursus urna
+            auctor cursus. Vivamus porttitor convallis mi</p>
+        </div>
+      </div>
+      <div class="w-full lg:w-1/3 py-2 flex flex-wrap border-none">
+        <h1 class="font-semibold text-xl mt-5 mb-8 w-full mx-5 text-grey-darker">Login</h1>
+        <div class="w-full  p-5 pt-0 ">
+          <!--check the class, 'border-red' must be there in case of error, otherwise remove it-->
+          <input type="email" class="w-full font-normal px-4 py-3 bg-white border border-red rounded" placeholder="Email">
+          <!--this div contains a span which contain error message-->
+          <div class="w-full py-1 px-1 text-red text-sm">
+            <span class="">Email does not exist</span>
+          </div>
+        </div>
+        <div class="w-full  p-5 pt-0 ">
+          <input type="password" class="w-full font-normal px-4 py-3 bg-white border rounded" placeholder="Password">
+        </div>
+        <!--Keep me logged in checkbox-->
+        <div class="w-full  px-8 py-2 text-center text-sm text-grey-darker">
+          <i class="far fa-square text-grey-dark"></i>
+          <span class="ml-2">Keep me logged in</span>
+        </div>
+        <div class="w-full py-5 items-start text-center">
+          <button class="bg-grey-lightest hover:bg-green hover:border-green-dark hover:text-white text-grey-darker rounded-full border border-grey-light w-32 px-5 py-3">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Start of Footer -->
+  <div id="footer" class="w-full lg:p-5 lg:pb-0  flex flex-wrap border-0 text-grey" style="background: rgb(16, 16, 16);">
+    <div class="w-full lg:w-1/3 p-5 my-8 border-0 relative leading-normal">
+      <h1 class="font-semibold text-base lg:text-xl text-white mb-2 capitalize">Company links</h1>
+      <div class="py-2 w-full">
+        <a href="#footer" class="hover:text-white">products</a>
+      </div>
+      <div class="py-2 w-full">
+        <a href="#footer" class="hover:text-white">help</a>
+      </div>
+      <div class="py-2 w-full">
+        <a href="#footer" class="hover:text-white">tickets</a>
+      </div>
+      <div class="py-2 w-full">
+        <a href="#footer" class="hover:text-white">affiliate</a>
+      </div>
+    </div>
+    <div class="w-full lg:w-1/3 p-5 my-8 border-0 relative leading-normal">
+      <h1 class="font-semibold text-base lg:text-xl text-white mb-2 capitalize">our guid</h1>
+      <div class="py-2 w-full">
+        <a href="#footer" class="hover:text-white">terms of use</a>
+      </div>
+      <div class="py-2 w-full">
+        <a href="#footer" class="hover:text-white">videos and images copyrights</a>
+      </div>
+      <div class="py-2 w-full">
+        <a href="#footer" class="hover:text-white">partners</a>
+      </div>
+      <div class="py-2 w-full">
+        <a href="#footer" class="hover:text-white">jobs</a>
+      </div>
+    </div>
+    <div class="w-full lg:w-1/3 p-5 my-8 border-0 relative leading-normal">
+      <h1 class="font-semibold text-base lg:text-xl text-white mb-2 capitalize">the devil's playground</h1>
+      <div class="py-2 w-full hover:text-white">
+        <i class="fab fa-facebook"></i>
+        <a href="#footer" class="ml-2">Facebook Page</a>
+      </div>
+      <div class="py-2 w-full hover:text-white">
+        <i class="fab fa-twitter"></i>
+        <a href="#footer" class="ml-2">Twitter</a>
+      </div>
+      <div class="py-2 w-full hover:text-white">
+        <i class="fas fa-envelope"></i>
+        <a href="#footer" class="ml-2">demo@mail.to</a>
+      </div>
+    </div>
+    <div class="w-full py-5 mx-5 border-t border-grey">
+      <img src="./dist/images/logo.png" class="w-10 h-10">
+      <div class="float-right p-2">
+        <span class="ml-2">all rights reserver to our website 2019.</span>
+      </div>
+      <div class="float-right p-2 hover:text-white">
+        <a href="#footer" class="ml-2">we will be pleased if your read our terms of user</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./dist/script.js"></script>
+</body>
+
+</html>

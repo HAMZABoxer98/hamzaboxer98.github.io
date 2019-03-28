@@ -20,3 +20,7 @@ a {
 .black-page iframe {
   height: 400px;
 }
+
+.transparent-black {
+  background: rgb(0, 0,0 , 0.5);
+}
