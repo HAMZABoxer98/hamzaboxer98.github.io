@@ -45,6 +45,14 @@ a {
 }
 
 /* styling carousel card while hovering */
-#carousel-black-card:hover{
+/* carousel cards */
+#hoverable-card:hover{
+  opacity: 0.8;
+}
+/* white cards */
+#hoverable-card.bg-white:hover{
+  opacity: 1;
+}
+#hoverable-card.bg-white:hover img{
   opacity: 0.8;
 }
