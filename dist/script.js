@@ -2,7 +2,7 @@
  * toggle dropdown
  * @param {event} event 
  */
-function toggle(event) {
+function toggleDropDown(event) {
   event.preventDefault();
 
   // in case the slected node is not the parent (container, div)
@@ -30,6 +30,56 @@ function toggle(event) {
     dropdown.className += ' hidden'      
   }
 
+}
+
+/**
+ * show hidden elements by removing "hidden" from className
+ * @param {string} id document.getElementById() 
+ */
+function show(id) {
+  /**
+   * hide the overflow of body is useful for showing the modal in a proper way
+   * because it allow us disable the scrolling bar 
+   */
+  if(id === 'video-modal') { 
+    document.body.className += ' overflow-y-hidden' 
+  }
+
+  let element = document.getElementById(id)
+  // becareful to the white space
+  element.className = element.className.replace(/(\shidden\s|^hidden\s|\shidden$)/, ' ')
+}
+
+/**
+ * hide elements by adding "hidden" to className
+ * @param {string} id document.getElementById() 
+ */
+function hide(id) {
+  /**
+   * hide the overflow of body is useful for showing the modal in a proper way
+   * because it allow us disable the scrolling bar 
+   */
+  if(id === 'video-modal') { 
+    document.body.className = 
+      document.body.className.replace('overflow-y-hidden', ' ') 
+  }
+
+  // becareful to the white space before 'hidden'
+  document.getElementById(id).className += ' hidden '
+}
+
+/**
+ * toggle elements using show() and hide()
+ * @param {string} id document.getElementById() 
+ */
+function simpleToggle(id) {
+  // becareful to the space before and after 'hidden'
+  // because we need to distinguish between hidden and lg:hidden, md:hidden
+  if(document.getElementById(id).className.search(/(\shidden\s|^hidden\s|\shidden$)/) !== -1) {
+    show(id)
+  }else {
+    hide(id)
+  }
 }
 
 var intro = new Vue({
