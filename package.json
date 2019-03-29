@@ -1,0 +1,20 @@
+{
+  "name": "mycinema",
+  "version": "1.0.0",
+  "description": "html template for movies webiste",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "@glidejs/glide": "^3.2.7",
+    "animate.css": "^3.7.0",
+    "tailwindcss": "^0.7.4",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "movies",
+    "template",
+    "html",
+    "tailwind"
+  ],
+  "author": "Hamza Nouali (Tipazian)"
+}

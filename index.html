@@ -11,11 +11,15 @@
   <link href="./node_modules/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
   <link href="./node_modules/animate.css/animate.min.css" rel="stylesheet">
 
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- IMPORTANT: vuejs is used for demo purposes, you should remove it -->
+  <script src="./demo_dist/vue/dist/vue.min.js"></script>
 
-  <script src="https://unpkg.com/@glidejs/glide@3.0.4/dist/glide.js"></script>
-  <link href="https://unpkg.com/@glidejs/glide@3.0.4/dist/css/glide.theme.css" rel="stylesheet">
-  <link href="https://unpkg.com/@glidejs/glide@3.0.4/dist/css/glide.core.css" rel="stylesheet">
+
+  <!-- Glide.js -->
+  <script src="./node_modules/@glidejs/glide/dist/glide.min.js"></script>
+  <link rel="stylesheet" href="./node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+  <link rel="stylesheet" href="./node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+
   <title>myCinema | Welcome to you</title>
 </head>
 
@@ -31,7 +35,7 @@
     </a>
   </div>
   <!-- White Navigation -->
-  <div class="w-full bg-white px-2 py-0 border-0 shadow-lg">
+  <div class="w-full bg-white px-2 py-0 border-0 shadow-lg sticky pin-t z-20">
     <!-- Desktop Navigation -->
     <div class="w-full px-2 bg-white border-0 relative p-0 hidden lg:flex">
       <a href="./index.html" class="block px-2 border-b-2 border-transparent hover:bg-grey-lightest">
@@ -40,9 +44,25 @@
       <div class="px-2 pt-px flex items-start absolute pin-r pin-y mr-2">
         <a href="./Login.html" class="block bg-green rounded-full px-8 py-2 text-white mt-3">Login</a>
       </div>
-      <a href="./Pricing.html" class="block px-2 py-5 border-b-2 border-transparent hover:border-grey-darker hover:bg-grey-lightest">
+      <a href="./Pricing.html" class="block px-2 py-5 -mb-px border-b-2 border-transparent hover:border-grey-darker hover:bg-grey-lightest">
         <span>Pricing</span>
       </a>
+      <div href="#" onclick="toggleDropDown(event)" class="relative cursor-pointer px-2 py-5 -mb-px border-b-2 border-transparent hover:border-grey-darker hover:bg-grey-lightest">
+        <span>DropDown</span>
+        <i class="fas fa-angle-down ml-2"></i>
+
+        <div id="dropdown" class="animated leading-normal fadeInUp faster hidden bg-white w-48 rounded-b shadow-lg p-2 absolute pin-l z-20 mt-5 text-grey-darkest">
+          <div class="px-2 py-1 hover:bg-grey-light rounded-sm w-full border-0 text-left capitalize">
+            <span class="font-medium">One more</span>
+          </div>
+          <div class="px-2 py-1 hover:bg-grey-light rounded-sm w-full border-0 text-left capitalize">
+            <span class="font-medium">two more</span>
+          </div>
+          <div class="px-2 py-1 hover:bg-grey-light rounded-sm w-full border-0 text-left capitalize">
+            <span class="font-medium">three more</span>
+          </div>
+        </div>
+      </div>
       <div class="px-2 border-b-2 border-transparent">
         <div class="px-2 mt-3 mr-2 relative">
           <input type="search" class="w-64 font-normal px-5 pr-5 py-2 bg-white border rounded-full" placeholder="search">
@@ -66,9 +86,25 @@
           <input type="text" class="w-full font-thin pl-10 pr-5 py-2 bg-indigo-lightest rounded-full" placeholder="search">
         </div>
       </div>
-      <a href="./Pricing.html" class="block p-2 text-center border-b">
+      <a id="bordered" href="./Pricing.html" class="block px-2 py-3 text-center border-b border-grey-light">
         <span>Pricing</span>
       </a>
+      <div id="bordered" href="#" onclick="toggleDropDown(event)" class="relative px-2 py-3 text-center border-b border-grey-light">
+        <span>DropDown</span>
+        <i class="fas fa-angle-down ml-2"></i>
+
+        <div id="dropdown" class="hidden bg-white w-full mt-2 text-grey-darkest">
+          <div id="dropdown-bordered" class="px-2 py-3 w-full border-0 text-left capitalize border-b border-grey-light">
+            <span class="font-medium">One More</span>
+          </div>
+          <div id="dropdown-bordered" class="px-2 py-3 w-full border-0 text-left capitalize border-b border-grey-light">
+            <span class="font-medium">Two More</span>
+          </div>
+          <div id="dropdown-bordered" class="px-2 py-3 w-full border-0 text-left capitalize border-b border-grey-light">
+            <span class="font-medium">Three More</span>
+          </div>
+        </div>
+      </div>
       <div class="p-2 text-center">
         <a href="./Login.html" class="block bg-green rounded-full px-8 py-2 text-white font-thin w-full">Login</a>
       </div>
@@ -84,17 +120,17 @@
       <button class="bg-green rounded-full px-8 py-3 text-white capitalize ">Login 3$/month</button>
     </div>
   </div>
-  <div class="bg-white p-0 text-center relative border-0 text-grey-dark mb-px">
-    <i class="fas fa-angle-left px-5 py-2  text-2xl border-l"></i>
-    <i class="fas fa-angle-right px-5 py-2  text-2xl border-l border-r"></i>
-  </div>
   <!-- carousel -->
-  <section id="intro" class="glide w-full lg:p-5 flex flex-wrap bg-black mb-0 border-0">
+  <section id="intro" class="glide w-full lg:pb-5 flex flex-wrap bg-black mb-0 border-0">
+    <div data-glide-el="controls" class="w-full bg-white p-0 text-center relative border-0 text-grey-dark mb-5">
+      <i data-glide-dir="<" class="fas fa-angle-left px-5 py-2 cursor-pointer text-2xl border-l"></i>
+      <i data-glide-dir=">" class="fas fa-angle-right px-5 py-2 cursor-pointer text-2xl border-l border-r"></i>
+    </div>
     <div class="glide__track" data-glide-el="track">
       <div class="glide__slides">
 
         <!-- Card -->
-        <div v-for="item in carousel2" class="glide__slide w-full lg:w-1/3 lg:px-2 my-8">
+        <a href="./ShowPage.html" id="carousel-black-card" v-for="item in carousel2" class="block glide__slide w-full lg:w-1/3 lg:px-2 my-8">
           <div class="px-3 py-5 lg:p-5 w-full h-auto border-0 relative leading-normal">
             <div class="w-full flex border-none items-start">
               <img :src="item.image" class="w-24 h-32 lg:w-32 lg:h-48 shadow-lg">
@@ -109,7 +145,7 @@
                   <i class="fas fa-star text-grey-darkest"></i>
                   <span class="text-xs ml-2 text-grey-dark">1,025,121 votes</span>
                 </div>
-                <p class="text-xs lg:text-sm text-grey-dark h-16 overflow-hidden lg:h-auto">
+                <p class="text-xs lg:text-sm text-grey-dark h-16 overflow-hidden">
                   {{ item.paragraph }}
                 </p>
                 <div class="w-full pt-2 absolute pin-x pin-b bg-black" style="box-shadow: rgb(34, 41, 47) 0px -7px 20px 25px"></div>
@@ -127,7 +163,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </a>
 
       </div>
     </div>
@@ -175,12 +211,12 @@
           <span class="font-medium text-lg">on cinema</span>
         </div>
         <div class="w-full pb-5 flex flex-wrap">
-          <div v-for="item in list" onclick="openModal(event, item)" class="cursor-pointer lg:py-5 p-0 w-full md:w-1/4 lg:w-48 relative rounded mx-auto lg:mx-2">
+          <div v-for="item in list" onclick="show('video-modal')" class="cursor-pointer mb-5 lg:mb-0 lg:py-5 md:mr-2 p-0 w-full md:w-auto lg:w-48 relative rounded lg:mx-auto lg:mx-2">
             <img :src="item.image" class="w-48 h-64 shadow-lg rounded-sm">
-            <div class="w-full lg:mt-5 overflow-hidden text-white absolute mx-auto pin-x pin-t rounded-t-sm p-2 pb-16" style="background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0));">
+            <div class="w-48 lg:mt-5 overflow-hidden text-white absolute mx-auto pin-x pin-t rounded-t-sm p-2 pb-16" style="background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0));">
               <span class="text-grey ">{{ item.created_at }}</span>
             </div>
-            <div class="w-full lg:mb-6 overflow-hidden text-white absolute mx-auto pin-x pin-b rounded-b-sm p-2 pt-16" style="background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));">
+            <div class="w-48 lg:mb-6 overflow-hidden text-white absolute mx-auto pin-x pin-b rounded-b-sm p-2 pt-16" style="background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));">
               <h1 class="font-semibold text-base capitalize">{{ item.title }}</h1>
               <div class="w-auto py-2 p-0 text-xs text-grey">
                 <i class="fas fa-star text-orange"></i>
@@ -243,7 +279,7 @@
                   <i class="fas fa-star text-grey-light"></i>
                   <span class="text-xs ml-2 text-grey-dark">1,025,121 votes</span>
                 </div>
-                <p class="text-xs lg:text-sm text-grey-dark h-16 overflow-hidden lg:h-auto">{{ item.paragraph }}</p>
+                <p class="text-xs lg:text-sm text-grey-dark h-16 overflow-hidden">{{ item.paragraph }}</p>
                 <div class="w-full pt-2 absolute lg:hidden pin-x pin-b bg-white" style="box-shadow: white 0px -7px 20px 25px;"></div>
               </div>
             </div>
@@ -324,7 +360,7 @@
           </div>
           <div class="w-full py-3 mt-1 flex flex-wrap">
             <!-- other seasons card -->
-            <div @click="current = item" v-for="item in otherSeasons" class="cursor-pointer hover:bg-grey-darkest w-full lg:w-1/4 p-3 flex leading-tight">
+            <div @click="current = item;" v-for="item in otherSeasons" class="cursor-pointer hover:bg-grey-darkest w-full lg:w-1/4 p-3 flex leading-tight">
               <div class="w-24">
                 <img :src="item.image" class="w-16 h-24 shadow-lg">
               </div>
@@ -363,7 +399,7 @@
                   <i class="fas fa-star text-grey-light"></i>
                   <span class="text-xs ml-2 text-grey-dark">1,025,121 votes</span>
                 </div>
-                <p class="text-xs lg:text-sm text-grey-dark h-16 overflow-hidden lg:h-auto"> {{ item.paragraph }} </p>
+                <p class="text-xs lg:text-sm text-grey-dark h-16 overflow-hidden"> {{ item.paragraph }} </p>
                 <div class="w-full pt-2 absolute lg:hidden pin-x pin-b" style="box-shadow: white 0px -7px 20px 25px;"></div>
               </div>
             </div>
@@ -432,7 +468,7 @@
                   <i class="fas fa-star text-grey-darkest"></i>
                   <span class="text-xs ml-2 text-grey-dark">1,025,121 votes</span>
                 </div>
-                <p class="text-xs lg:text-sm text-grey-dark h-16 overflow-hidden lg:h-auto">
+                <p class="text-xs lg:text-sm text-grey-dark h-16 overflow-hidden">
                   {{ item.paragraph }}
                 </p>
                 <div class="w-full pt-2 absolute pin-x pin-b bg-black" style="box-shadow: rgb(34, 41, 47) 0px -7px 20px 25px"></div>
@@ -593,8 +629,8 @@
 
   <!-- Alerts -->
   <!--message with icon but without " got it " button.-->
-  <div id="message-icon" class="animated fadeInUp faster hidden fixed pin-b pin-r m-8 z-40">
-    <div class="w-full lg:w-1/3 lg:w-1/3 bg-white shadow-lg border-0 rounded text-grey-darkest p-5 leading-normal">
+  <div id="message-icon" class="animated fadeInUp faster hidden fixed w-full lg:w-1/3  pin-b pin-r p-5 lg:p-8 z-40">
+    <div class="w-full bg-white shadow-lg border-0 rounded text-grey-darkest p-5 leading-normal">
       <div class="w-full flex border-none">
         <div class="w-auto flex mx-1 p-2 border-0">
           <i class="fas fa-exclamation-circle text-3xl"></i>
@@ -610,8 +646,8 @@
   </div>
 
   <!--message with " got it " and "decline" buttons and icon.-->
-  <div id="message-icon-gotit-decline" class="animated fadeInUp faster hidden fixed pin-b pin-r m-8 z-40">
-    <div class="w-full lg:w-1/3 bg-white shadow-lg border-0 rounded text-grey-darkest p-5 leading-normal">
+  <div id="message-icon-gotit-decline" class="animated fadeInUp faster hidden fixed w-full lg:w-1/3  pin-b pin-r p-5 lg:p-8 z-40">
+    <div class="w-full bg-white shadow-lg border-0 rounded text-grey-darkest p-5 leading-normal">
       <div class="w-full flex border-none">
         <div class="w-auto flex mx-1 p-2 border-0">
           <i class="fas fa-exclamation-circle text-3xl"></i>
@@ -631,8 +667,8 @@
   </div>
 
   <!--message with " got it " button but without icon-->
-  <div id="message-gotit" class="animated fadeInUp faster hidden fixed pin-b pin-r m-8 z-40">
-    <div class="w-full lg:w-1/3 bg-white shadow-lg border-0 rounded text-grey-darkest p-5 leading-normal">
+  <div id="message-gotit" class="animated fadeInUp faster hidden fixed w-full lg:w-1/3 pin-b pin-r p-5 lg:p-8 z-40">
+    <div class="w-full bg-white shadow-lg border-0 rounded text-grey-darkest p-5 leading-normal">
       <div class="w-full p-2 border-0">
         <div class="w-full pb-5">
           <p class=" ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc mi, imperdiet ac consequat ac, interdum eget
@@ -645,64 +681,32 @@
     </div>
   </div>
   <!--success alert-->
-  <div id="alert-success" class="animated fadeInUp faster hidden fixed pin-t pin-x p-5 lg:p-8 z-40">
-    <div class="w-full lg:w-1/3 bg-black z-40 text-green-light font-semibold px-5 py-3 rounded shadow-lg border-0">
+  <div id="alert-success" class="animated fadeInUp faster hidden fixed w-full lg:w-1/3 pin-t pin-r p-5 lg:p-8 z-40">
+    <div class="w-full bg-black z-40 text-green-light font-semibold px-5 py-3 rounded shadow-lg border-0">
       <i class="fas fa-check-circle"></i>
       <span class="ml-2">Success message !</span>
     </div>
   </div>
   <!--error alert-->
-  <div id="alert-error" class="animated fadeInUp faster hidden fixed pin-t pin-x p-5 lg:p-8 z-40">
-    <div class="w-full lg:w-1/3 bg-black z-40 text-red-light font-semibold px-5 py-3 rounded shadow-lg border-0">
+  <div id="alert-error" class="animated fadeInUp faster hidden fixed w-full lg:w-1/3  pin-t pin-r p-5 lg:p-8 z-40">
+    <div class="w-full bg-black z-40 text-red-light font-semibold px-5 py-3 rounded shadow-lg border-0">
       <i class="fas fa-times-circle"></i>
       <span class="ml-2">Error message !</span>
     </div>
   </div>
   <!--warning alert-->
-  <div id="alert-warning" class="animated fadeInUp faster hidden fixed pin-t pin-x p-5 lg:p-8 z-40">
-    <div class="w-full lg:w-1/3 bg-black text-yellow-light font-semibold px-5 py-3 rounded shadow-lg border-0">
+  <div id="alert-warning" class="animated fadeInUp faster hidden fixed w-full lg:w-1/3  pin-t pin-r p-5 lg:p-8 z-40">
+    <div class="w-full bg-black text-yellow-light font-semibold px-5 py-3 rounded shadow-lg border-0">
       <i class="fas fa-exclamation-triangle"></i>
       <span class="ml-2">Warning message !</span>
     </div>
   </div>
 
-
-
-
+  <!-- all the code that is responsible for showing, hiding and toggling elements is here -->
   <script src="./dist/script.js"></script>
-  <script>
-    var glide = new Glide('#intro', {
-      type: 'carousel',
-      perView: 3,
-      autoplay: 1500,
-      breakpoints: {
-        800: {
-          perView: 3
-        },
-        480: {
-          perView: 1
-        }
-      }
-    })
+  <script src="./demo_dist/script.js"></script>
+  <script src="./dist/carouselCode.js"></script>
 
-    glide.mount()
-
-    var glide1 = new Glide('#intro1', {
-      type: 'carousel',
-      perView: 3,
-      autoplay: 1500,
-      breakpoints: {
-        800: {
-          perView: 3
-        },
-        480: {
-          perView: 1
-        }
-      }
-    })
-
-    glide1.mount()
-  </script>
 </body>
 
 </html>

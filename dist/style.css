@@ -1,3 +1,12 @@
+/* 
+Note:
+We did not write much of css due to the using of tailwindcss
+make sure to be learn tailwindcss before you make any changes 
+-------------------------------------------------------------
+Feel free to contact me if you face any problems
+*/
+
+/* giving and preventing some default stylings */
 * {
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   text-decoration: unset;
@@ -7,27 +16,35 @@
 *:focus, *:hover, *:active {
   outline: none !important;
 }
-
 a {
   color: inherit;
 }
 
+/* this is used to make the height of carousel cards static */
 #content-container {
   height: 195px;
 }
 
+/* black page exists in the ShowPage and Modal */
 .black-page {
   background: rgb(8, 8, 8);
 }
-
+/* black page exists in the ShowPage and Modal */
 .black-page iframe {
   height: 400px;
 }
 
+/* Modal background */
 .transparent-black {
   background: rgb(0, 0,0 , 0.5);
 }
 
-#episode:last-child {
+/* for some lists which have border style */ 
+#episode:last-child, #bordered, #mobile-bordered {
   border-bottom: none;
+}
+
+/* styling carousel card while hovering */
+#carousel-black-card:hover{
+  opacity: 0.8;
 }
