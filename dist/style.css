@@ -20,6 +20,41 @@ a {
   color: inherit;
 }
 
+/* 
+Primary Color
+----------------------------------- */
+/* Background */
+.background-primary {
+  background: #38c172;
+} 
+.hover\:background-primary:hover {
+  background: #38c172;
+}
+/* Border */
+.hover\:border-primary:hover {
+  border-color: #38c172;
+}
+.hover\:border-primary-dark:hover {
+  border-color: #1f9d55;
+}
+/* Text */
+.text-primary {
+  color: #38c172;
+} 
+.text-primary-dark {
+  color: #1f9d55;
+} 
+.hover\:text-primary:hover {
+  color: #38c172;
+}
+.hover\:text-primary-dark:hover {
+  color: #1f9d55;
+}
+/*-------------------------------- */
+#footer {
+  background: rgb(16, 16, 16);
+}
+
 /* this is used to make the height of carousel cards static */
 #content-container {
   height: 195px;
@@ -44,6 +79,12 @@ a {
   border-bottom: none;
 }
 
+/* 
+----------------
+PAGE: index.html
+----------------
+*/
+
 /* styling carousel card while hovering */
 /* carousel cards */
 #hoverable-card:hover{
@@ -55,4 +96,65 @@ a {
 }
 #hoverable-card.bg-white:hover img{
   opacity: 0.8;
+}
+
+#header {
+  background: url("../dist/images/cover.jpg") center center / cover fixed;
+}
+
+#header>div {
+  background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+#black-shadow-over-text {
+  box-shadow: rgb(34, 41, 47) 0px -7px 20px 25px;
+}
+
+#gradient-shadow-on-top {
+  background-image: linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+#gradient-shadow-on-bottom {
+  background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+#white-shadow-over-text {
+  box-shadow: white 0px -7px 20px 25px;
+}
+
+/* 
+-----------
+PAGE: Login
+-----------
+ */
+#background-pattern {
+  background: url("../dist/images/pattern.png") repeat;
+}
+
+#welcome-gradient-background {
+  background: linear-gradient(rgba(5, 14, 10, 0.95) 41%, rgb(10, 53, 28));
+}
+
+/*
+-----------
+PAGE: Price
+-----------
+*/
+.circle-polygen-top {
+  clip-path: circle(26.7% at 91% 10%); 
+}
+.circle-polygen-bottom {
+  clip-path: circle(15.5% at 5% 100%)
+}
+
+#gradient-indigo {
+  background-image: linear-gradient(to top, rgb(161, 140, 209) 0%, rgb(251, 194, 235) 100%);
+}
+
+#gradient-blue {
+  background-image: linear-gradient(280deg, rgb(132, 250, 176) 0%, rgb(143, 211, 244) 100%);
+}
+
+#gradient-orange {
+  background-image: linear-gradient(120deg, rgb(246, 211, 101) 0%, rgb(253, 160, 133) 100%);
 }
