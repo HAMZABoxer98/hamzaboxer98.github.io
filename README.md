@@ -40,17 +40,16 @@ We have a mailing list located at: hamzatipazian@gmail.com
 
 Lets Talk About Architecture !
 ------------------------------
-- You have 7 HTML files: index, inex_not_demo, 404 page, login, register, pricing and show page.
-NOTE:
------
-index.html includes vue.js for demo purposes.
-index_not_demo.html uses only JavaScript without jQuery, Frameworks or Labraries.
+- You have 8 HTML files: index, inex_not_demo, 404 page, login, register, pricing and show page.
+index.html includes Vue.js for demo purposes.
+index_not_demo.html uses pure JavaScript without jQuery, Frameworks or Labraries.
  
 - You have node_modules folder which contain some JavaScript modules that was installed throught
 npm like Glide.js (for carousel), Animatecss, Tailwindcss and Free Font Awesome (For icons).
 
 - you have "dist" folder which contains all the required assets.
-- you have "demo_dist" which is not required.
+- you have "demo_dist" which is not required (index.html will not work in case you remove 
+it, in contrast index_not_demo.html).
 
 NOTE:
 -----
@@ -63,10 +62,9 @@ in your code editor in order to collect and see the code.
 
 Resources:
 ----------
-all the images, videos that are used here have no copyrights, and it is completely free to use.
+- all the images, videos that are used here have no copyrights, and it is completely free to use.
 Check unsplash.com & pexels.com for more info.
-
-package.json contains the required JavaScript modules.
+- package.json contains the required JavaScript modules.
 
 
 HTML code:

@@ -101,7 +101,7 @@
       <div id="bordered" onclick="hide('navigation-dropdown');doScrolling('#boxOffice', 1000, 50);" class="px-2 py-3 text-center border-b border-grey-light capitalize">
         <span>box office</span>
       </div>
-      <div id="bordered" href="#" onclick="toggleDropDown(event)" class="relative px-2 py-3 text-center border-b border-grey-light">
+      <div id="bordered" onclick="toggleDropDown(event)" class="relative px-2 py-3 text-center border-b border-grey-light">
         <span>Other Pages</span>
         <i class="fas fa-angle-down ml-2"></i>
 
@@ -126,7 +126,7 @@
   <!-- Header -->
   <div id="header" class="bg-white relative border-0 text-white mt-px shadow-inner p-0 pr-10">
     <div class="p-10 py-16 leading-loose">
-      <h1 class="font-bold text-3xl lg:w-2/3 capitalize leading-loose">start watching movies now</h1>
+      <h3 class="font-bold text-3xl lg:w-2/3 capitalize leading-loose">start watching movies now</h3>
       <p class="mb-5 lg:w-3/5">The best movies in all categories are avialabe now in our platform, you have to create account and start joining the
         awesome journey !</p>
       <a href="./Pricing.html" class="background-primary rounded-full px-8 py-3 text-white capitalize ">Login 3$/month</a>
@@ -147,7 +147,7 @@
             <div class="w-full flex border-none items-start">
               <img alt="placeholder" :src="item.image" class="w-24 h-32 lg:w-32 lg:h-48 shadow-lg">
               <div id="content-container" class="ml-5 pb-5 overflow-hidden relative">
-                <h1 class="font-semibold text-base lg:text-xl text-grey mb-1 capitalize">{{ item.title }}</h1>
+                <h3 class="font-semibold text-base lg:text-xl text-grey mb-1 capitalize">{{ item.title }}</h3>
                 <span class="text-xs text-grey-darker font-thin capitalize">April 2019</span>
                 <div class="w-auto py-2 p-0 text-xs">
                   <i class="fas fa-star text-grey-dark"></i>
@@ -190,9 +190,9 @@
       <!-- Categories section -->
       <div id="categories" class="w-full pt-5">
         <div class="px-2 py-2 w-full border-b border-grey text-black text-left uppercase mb-8">
-          <span class="font-medium text-lg">categories</span>
+          <h2 class="font-medium text-lg">categories</h2>
         </div>
-        <span @click="select($event, item)" v-for="item in categories" href="#" :class="`cursor-pointer block p-2 rounded ${selected === item.id ? 'background-primary text-white': ''} w-full border-0 text-left mb-1 capitalize`">
+        <span @click="select($event, item)" v-for="item in categories" :class="`cursor-pointer block p-2 rounded ${selected === item.id ? 'background-primary text-white': ''} w-full border-0 text-left mb-1 capitalize`">
           <i :class="`${selected === item.id ? 'fas fa-check-circle' : 'far fa-circle' }`"></i>
           <span class="font-medium ml-1">{{ item.content }}</span>
         </span>
@@ -201,14 +201,14 @@
       <!-- Box Office section -->
       <div id="boxOffice" class="w-full pt-5">
         <div class="p-2 rounded w-full border-0 text-left mb-1 uppercase mb-2 text-black">
-          <span class="font-medium text-lg">box office</span>
+          <h2 class="font-medium text-lg">box office</h2>
         </div>
         <div onclick="show('video-modal')" v-for="item in list" class="cursor-pointer w-full p-2 flex leading-tight">
           <div class="w-24">
             <img alt="placeholder" :src="item.image" class="w-16 h-24 shadow-lg">
           </div>
           <div class="pl-3 w-full  text-left">
-            <h1 class="font-normal text-sm mb-1 capitalize">{{ item.title }}</h1>
+            <h3 class="font-normal text-sm mb-1 capitalize">{{ item.title }}</h3>
             <div class="w-auto py-2 p-0 text-xs text-grey-darkest">
               <i class="fas fa-star text-orange"></i>
               <span>{{ item.rating }} IMDb</span>
@@ -220,7 +220,7 @@
       <!-- On Cinema section -->
       <div id="onCinema" class="w-full pt-5">
         <div class="p-2 rounded w-full border-0 text-left mb-1 uppercase mb-2 text-black">
-          <span class="font-medium text-lg">on cinema</span>
+          <h2 class="font-medium text-lg">on cinema</h2>
         </div>
         <div class="w-full pb-5 flex flex-wrap">
           <div v-for="item in list" id="hoverable-card" onclick="show('video-modal')" class="cursor-pointer mb-5 lg:mb-0 lg:py-5 md:mr-2 p-0 w-full md:w-auto lg:w-48 relative rounded lg:mx-auto lg:mx-2">
@@ -229,7 +229,7 @@
               <span class="text-grey ">{{ item.created_at }}</span>
             </div>
             <div id="gradient-shadow-on-bottom" class="w-48 lg:mb-6 overflow-hidden text-white absolute mx-auto pin-x pin-b rounded-b-sm p-2 pt-16">
-              <h1 class="font-semibold text-base capitalize">{{ item.title }}</h1>
+              <h3 class="font-semibold text-base capitalize">{{ item.title }}</h3>
               <div class="w-auto py-2 p-0 text-xs text-grey">
                 <i class="fas fa-star text-orange"></i>
                 <span>{{ item.rating }} IMDb</span>
@@ -245,7 +245,7 @@
       <!-- group by section -->
       <div id="groupBy" class="w-full pt-0 pb-5 flex flex-wrap leading-normal">
         <div class="px-2 leading-loose flex flex-wrap lg:flex-no-wrap text-center w-full border-0 text-left text-black uppercase -mt-px text-xs lg:text-sm border-b border-grey lg:mx-5">
-          <span class="w-full lg:w-auto font-medium text-lg pt-1">group by</span>
+          <h2 class="w-full lg:w-auto font-medium text-lg pt-1">group by</h2>
           <div id="dropdown-container" onclick="return toggleDropDown(event)" class="cursor-pointer px-2 lg:px-5 py-2 ml-2 font-semibold relative -mb-px hover:text-primary border-b-2 border-transparent hover:border-primary">
             <span class="capitalize">top watching</span>
             <i class="fas fa-angle-down ml-2"></i>
@@ -280,7 +280,7 @@
             <div class="w-full flex border-none items-start">
               <img alt="placeholder" :src="item.image" class="w-32 h-48 -mt-5 shadow-lg">
               <div class="relative ml-5 pb-5 overflow-hidden">
-                <h1 class="font-semibold text-base lg:text-xl text-grey-darkest mb-1 capitalize">{{ item.title }}</h1>
+                <h3 class="font-semibold text-base lg:text-xl text-grey-darkest mb-1 capitalize">{{ item.title }}</h3>
                 <span class="text-xs text-primary-dark font-thin capitalize">{{ item.company }}</span>
                 <p></p>
                 <div class="w-auto bg-white py-3 p-0 text-xs">
@@ -341,7 +341,7 @@
         </div>
         <div class="w-full p-5 lg:mx-5 mt-8 bg-black shadow border-0 flex flex-wrap text-grey leading-loose ">
           <div class="mx-3 pt-2 pb-3 w-full border-0 text-left mb-2 capitalize border-b border-grey-darkest relative">
-            <h1 class="font-semibold text-lg text-white pr-24">{{ current.title }}</h1>
+            <h3 class="font-semibold text-lg text-white pr-24">{{ current.title }}</h3>
             <div class="p-2 py-3 absolute pin-r pin-t w-24">
               <i class="fas fa-star text-orange"></i>
               <span>{{ current.rating }} IMDb</span>
@@ -359,7 +359,7 @@
             <p class="overflow-hidden text-sm mb-5">{{ current.paragraph }}</p>
             <div class="w-full text-center py-5">
               <!--This should link to the show page-->
-              <a href="#" class="background-primary rounded-full px-8 py-3 text-white capitalize">Start Watching</a>
+              <a href="./ShowPage.html" class="background-primary rounded-full px-8 py-3 text-white capitalize">Start Watching</a>
             </div>
           </div>
           <div class="w-full lg:w-2/3 p-3 relative">
@@ -368,7 +368,7 @@
             </video>
           </div>
           <div class="mx-3 pt-2 pb-3 w-full border-0 text-left mb-2 capitalize border-b border-grey-darkest">
-            <h1 class="font-semibold text-lg text-white">watch other seasons</h1>
+            <h2 class="font-semibold text-lg text-white">watch other seasons</h2>
           </div>
           <div class="w-full py-3 mt-1 flex flex-wrap">
             <!-- other seasons card -->
@@ -377,7 +377,7 @@
                 <img alt="placeholder" :src="item.image" class="w-16 h-24 shadow-lg">
               </div>
               <div class="pl-3 w-full ">
-                <h1 class="font-normal text-sm text-grey mb-1 capitalize">{{item.title}}</h1>
+                <h3 class="font-normal text-sm text-grey mb-1 capitalize">{{item.title}}</h3>
                 <div class="w-auto py-2 p-0 text-xs">
                   <i class="fas fa-star text-grey-dark"></i>
                   <span>{{ item.rating }} IMDb</span>
@@ -400,7 +400,7 @@
             <div class="w-full flex border-none items-start">
               <img alt="placeholder" :src="item.image" class="w-32 h-48 shadow-lg">
               <div class="relative ml-5 pb-5 overflow-hidden">
-                <h1 class="font-semibold text-base lg:text-xl text-grey-darkest mb-1 capitalize">{{ item.title }}</h1>
+                <h3 class="font-semibold text-base lg:text-xl text-grey-darkest mb-1 capitalize">{{ item.title }}</h3>
                 <span class="text-xs text-primary-dark font-thin capitalize">{{ item.company }}</span>
                 <p></p>
                 <div class="w-auto bg-white py-3 p-0 text-xs">
@@ -458,7 +458,7 @@
   <!-- carousel -->
   <section id="intro1" class="glide w-full lg:p-5 flex flex-wrap bg-black mb-0 border-0">
     <div class="mx-3 lg:mx-5 leading-loose pt-2 pb-3 w-full border-0 text-left mb-2 capitalize border-b border-grey-darkest relative">
-      <h1 class="font-semibold text-lg text-white">Trending</h1>
+      <h2 class="font-semibold text-lg text-white">Trending</h2>
     </div>
 
     <div class="glide__track" data-glide-el="track">
@@ -521,7 +521,7 @@
           allowfullscreen=""></iframe>
 
         <div class="pt-2 pb-3 w-full border-0 text-left mb-2 capitalize border-b border-grey-darkest relative">
-          <h1 class="font-semibold text-lg text-white pr-24">Hotel in the front of my house (season 2)</h1>
+          <h3 class="font-semibold text-lg text-white pr-24">Hotel in the front of my house (season 2)</h3>
           <div class="p-2 py-3 absolute pin-r pin-t w-24">
             <i class="fas fa-star text-orange"></i>
             <span>8.6 IMDb</span>
@@ -579,7 +579,7 @@
   <!-- Footer -->
   <div id="footer" class="w-full lg:p-5 lg:pb-0  flex flex-wrap border-0 text-grey">
     <div class="w-full lg:w-1/3 p-5 my-8 border-0 relative leading-normal">
-      <h1 class="font-semibold text-base lg:text-xl text-white mb-2 capitalize">Company links</h1>
+      <h5 class="font-semibold text-base lg:text-xl text-white mb-2 capitalize">Company links</h5>
       <div class="py-2 w-full">
         <a href="#footer" class="hover:text-white">products</a>
       </div>
@@ -594,7 +594,7 @@
       </div>
     </div>
     <div class="w-full lg:w-1/3 p-5 my-8 border-0 relative leading-normal">
-      <h1 class="font-semibold text-base lg:text-xl text-white mb-2 capitalize">our guid</h1>
+      <h5 class="font-semibold text-base lg:text-xl text-white mb-2 capitalize">our guid</h5>
       <div class="py-2 w-full">
         <a href="#footer" class="hover:text-white">terms of use</a>
       </div>
@@ -609,7 +609,7 @@
       </div>
     </div>
     <div class="w-full lg:w-1/3 p-5 my-8 border-0 relative leading-normal">
-      <h1 class="font-semibold text-base lg:text-xl text-white mb-2 capitalize">How To Find Us</h1>
+      <h5 class="font-semibold text-base lg:text-xl text-white mb-2 capitalize">How To Find Us</h5>
       <div class="py-2 w-full hover:text-white">
         <i class="fab fa-facebook"></i>
         <a href="#footer" class="ml-2">Facebook Page</a>
