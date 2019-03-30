@@ -3,7 +3,7 @@
  * @param {event} event 
  */
 function toggleDropDown(event) {
-  event.preventDefault();
+  if(event.target.tagName.toLowerCase() !== 'a') event.preventDefault();
 
   // in case the slected node is not the parent (container, div)
   let element = event.target.id !== 'dropdown-container' ? event.target.parentNode : event.target
