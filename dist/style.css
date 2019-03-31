@@ -25,30 +25,30 @@ Primary Color
 ----------------------------------- */
 /* Background */
 .background-primary {
-  background: #38c172;
+  background: #fb3d3d;
 } 
 .hover\:background-primary:hover {
-  background: #38c172;
+  background: #fb3d3d;
 }
 /* Border */
 .hover\:border-primary:hover {
-  border-color: #38c172;
+  border-color: #fb3d3d;
 }
 .hover\:border-primary-dark:hover {
-  border-color: #1f9d55;
+  border-color: #c53333;
 }
 /* Text */
 .text-primary {
-  color: #38c172;
+  color: #fb3d3d;
 } 
 .text-primary-dark {
-  color: #1f9d55;
+  color: #c53333;
 } 
 .hover\:text-primary:hover {
-  color: #38c172;
+  color: #fb3d3d;
 }
 .hover\:text-primary-dark:hover {
-  color: #1f9d55;
+  color: #c53333;
 }
 /*-------------------------------- */
 #footer {
@@ -63,10 +63,6 @@ Primary Color
 /* black page exists in the ShowPage and Modal */
 .black-page {
   background: rgb(8, 8, 8);
-}
-/* black page exists in the ShowPage and Modal */
-.black-page iframe {
-  height: 400px;
 }
 
 /* Modal background */
